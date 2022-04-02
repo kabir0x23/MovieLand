@@ -22,7 +22,7 @@ const App = () => {
 
         setMovies(data.Search);
     };
-    
+
 
     return (
         <div className={"app"}>
