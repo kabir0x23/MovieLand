@@ -1,21 +1,37 @@
-name: Docker Series Builds
+name: Github pages deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - "main"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+
     steps:
       - uses: actions/checkout@v2
-      - name: docker login
+
+      - run: npm install
+      - run: npm run build
         env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: docker build nodejs
-        run: |
-          docker build ./nodejs -t aimvector/nodejs:1.0.0
-      - name: docker push
-        run: |
-          docker push aimvector/nodejs:1.0.0
+          PUBLIC_BASE_PATH: /movie-app
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist # The folder the action should deploy.
+
+      - name: Docker Build 🚀
+      - uses: mr-smithers-excellent/docker-build-push@v4
+        with:
+          image: kabir0x23/movieapp
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
