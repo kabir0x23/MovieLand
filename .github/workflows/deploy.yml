@@ -1,37 +1,93 @@
-name: Github pages deploy
 
+# This is a basic workflow to help you get started with Actions
+name: CI-CD
+
+# Controls when the action will run.
 on:
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches:
-      - "main"
+    branches: [main]
+  pull_request:
+    branches: [main]
+  # # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
 
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  # This workflow contains multiple jobs
+  build_test:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [14.x]
 
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - run: npm install
-      - run: npm run build
-        env:
-          PUBLIC_BASE_PATH: /movie-app
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
+      - name: setup node
+        uses: actions/setup-node@master
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          node-version: ${{ matrix.node-version }}
 
-      - name: Docker Build 🚀
-      - uses: mr-smithers-excellent/docker-build-push@v4
+      # install applicaion dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+      # build and test the apps
+      - name: build
+        run: |
+          npm run build
+          npm test
+  push_to_Docker_Hub:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    # build docker image and push to docker hub
+    # only if the app build and test successfully
+    needs: [build_test]
+
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
         with:
-          image: kabir0x23/movieapp
-          registry: docker.io
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.REACTUSERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.REACTUSERNAME }}/shopping-app-react:latest
+
+      - name: Run the image in a container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: ${{ secrets.REACTUSERNAME }}/shopping-app-react:latest
+          run: |
+            echo "runing the docker image"
+  push_to_vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: amondnet/vercel-action@v20
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.ORG_ID}}
+          vercel-project-id: ${{ secrets.PROJECT_ID}}
+          vercel-args: "--prod"
+
+            
