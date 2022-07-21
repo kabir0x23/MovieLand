@@ -1,0 +1,44 @@
+on:
+  fork:
+  push:
+    branches: [main]
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: EddieHubCommunity/gh-action-community/src/welcome@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: |
+            <div align="center">
+              <h3> It's great having you contribute to this project </h3>
+              <h4> 🌟 Welcome 🌟 </h4>
+            </div>
+          pr-message: |
+            <div align="center">
+              <h3> It's great having you contribute to this project </h3>
+              <h4> 🌟 Welcome 🌟 </h4>
+            </div>
+          footer: |
+            </p>          
+            
+            - If you would like to continue contributing to open source and would like to do it with an awesome inclusive community.
+            - You should join our [Discord](https://discord.gg/WhDry9FWE7) chat. 
+            - We help and encourage each other to contribute to open source little and often 😄.
+            - Feel free to check out other cool open-source repositories and communities:
+              - [kabir0x23](https://github.com/kabir0x23) 
+              - [Cryptoverse Web3](https://github.com/CryptoverseWeb3)
+              - [Thecyberworld](https://github.com/thecyberworld).
+            - Any questions let us know.
+            
+            <p>
