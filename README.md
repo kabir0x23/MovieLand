@@ -17,7 +17,6 @@ Movie-land is api based website that is used to search for movies, and display t
 ---
 
 ### 👇 Prerequisites
-
 Before installation, please make sure you have already installed the following tools:
 - [Git](https://git-scm.com/downloads)
 - [Nodejs](https://nodejs.org/en/download/)
