@@ -1,6 +1,6 @@
 # Movie Land
 <p align="center">
-Movie-land is built with react, deployed with docker, and hosted on heroku.
+Movie-land is built with react, deployed with docker, and hosted on heroku. <br>
 Movie-land is api based website that is used to search for movies, and display the results.
 </p>
 
