@@ -23,6 +23,7 @@ Before installation, please make sure you have already installed the following t
 - [Nodejs](https://nodejs.org/en/download/)
 
 ### 🛠️ Installation Steps
+
 1. Fork the project
 2. Clone the forked project
 3. Navigate to the cloned project directory
