@@ -7,6 +7,18 @@
   box-sizing: border-box;
 }
 
+
+/* adding the light and dark theme  */
+/* id light -> light or id dark -> dark */
+#light{
+  background-color: #150, 147, 147;
+}
+#dark{
+  background-color:black;
+}
+
+
+
 :root {
   --font-roboto: "Roboto Slab", serif;
   --font-raleway: "Raleway", sans-serif;
@@ -15,6 +27,13 @@
 body {
   font-family: var(--font-roboto);
   background-color: #212426;
+}
+/*  adding the  */
+#light .app{
+  background-color:#212426 ;
+}
+#dark .app{
+  background-color:black;
 }
 
 .app {
@@ -25,7 +44,14 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.switch{
+display: flex;
+width: 71%;
+ margin: 0rem 0 1rem;
+flex-direction: row-reverse;
 
+
+}
 h1 {
   font-size: 3rem;
   letter-spacing: 0.9px;
@@ -54,7 +80,12 @@ h1 {
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
-
+#light .search{
+  background-color:#fff ;
+}
+#dark .search{
+  background-color:black;
+}
 .search input {
   flex: 1;
   border: none;
@@ -67,7 +98,12 @@ h1 {
   color: #a1a1a1;
   background: #1f2123;
 }
-
+#light .search input{
+  background-color:#fff ;
+}
+#dark .search input{
+  background-color:black;
+}
 .search img {
   width: 35px;
   height: 35px;
@@ -209,6 +245,10 @@ h1 {
     width: 20px;
     height: 20px;
   }
+  .switch{
+    width: 91%;
+ margin: 1rem 0 0rem;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -228,4 +268,10 @@ h1 {
     width: "100%";
     margin: 1rem;
   }
+  .switch{
+    width: 91%;
+ margin: 1rem 0 0rem;
+  }
 }
+
+

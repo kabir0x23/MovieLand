@@ -4,11 +4,24 @@ import MovieCard from './MovieCard';
 
 import './App.css';
 import SearchIcon from './search.svg';
+import { createContext } from 'react';
+// import the swtich
+import ReactSwitch from "react-switch";
+
+export const ThemeContext = createContext(null)
+
 
 const API_URL = 'https://www.omdbapi.com/?apikey=cc9d55e5';
 
 
 const App = () => {
+    // adding
+    const [theme,setTheme] = useState("dark")
+    // toggle
+    const toggleTheme = () =>{
+        setTheme((curr) =>(curr === "light" ? "dark":"light"));
+    }
+
     const [movies, setMovies] = useState();
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -25,8 +38,16 @@ const App = () => {
 
 
     return (
-        <div className={"app"}>
+        
+        <ThemeContext.Provider value={{theme,toggleTheme}}>
+
+     
+        <div className={"app"} id ={theme}>
             <h1>MovieLand</h1>
+            <div className="switch">
+              
+            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
+            </div>
 
             <div className="search">
                 <input
@@ -56,6 +77,7 @@ const App = () => {
                 )}
 
         </div>
+        </ThemeContext.Provider>
     );
 };
 
