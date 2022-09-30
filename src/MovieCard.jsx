@@ -18,7 +18,8 @@ const MovieCard = ({ movie }) => {
       </div>
       <div>
         <span>{movie.Type}</span>
-        <h3>{`${movie.Title} (${movie.Year})`}</h3>
+        <h3>{movie.Title}</h3>
+        <h3 className="year">{movie.Year}</h3>
       </div>
     </div>
   );

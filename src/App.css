@@ -98,6 +98,16 @@ h1 {
   align-items: center;
 }
 
+.year {
+  border: 2px solid white;
+  width: fit-content;
+  padding: 2px 20px;
+  color: white !important;
+  background: transparent;
+  box-shadow: 3px 5px 2px 0px rgba(255, 255, 255, 0.123),
+    5px 5px 2px 0px rgba(255, 255, 255, 0.123) inset;
+}
+
 .empty h2 {
   font-size: 1.25rem;
   color: #f9d3b4;
