@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/kabir0x23/MovieLand/compare/v0.1.3...v0.2.0) (2022-10-01)
+
+
+### Features
+
+* release date below movie name in card ([#29](https://github.com/kabir0x23/MovieLand/issues/29)) ([f10b605](https://github.com/kabir0x23/MovieLand/commit/f10b6057880c757ef6e599c79a28b17b97319b4c))
+
+
+
 ## [0.1.3](https://github.com/kabir0x23/MovieLand/compare/v0.1.2...v0.1.3) (2022-09-30)
 
 
