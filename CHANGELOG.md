@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/kabir0x23/MovieLand/compare/v0.2.0...v0.2.1) (2022-10-02)
+
+
+### Bug Fixes
+
+* console warnings ([#32](https://github.com/kabir0x23/MovieLand/issues/32)) ([8965f29](https://github.com/kabir0x23/MovieLand/commit/8965f29b9bf446e8e998edfedeb4207ccd673a04))
+
+
+
 # [0.2.0](https://github.com/kabir0x23/MovieLand/compare/v0.1.3...v0.2.0) (2022-10-01)
 
 
