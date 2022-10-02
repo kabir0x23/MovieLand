@@ -12,9 +12,16 @@
   --font-raleway: "Raleway", sans-serif;
 }
 
-body {
+
+/* Added light mode styles and dark mode styles alternatively :) */
+
+.main-dark {
   font-family: var(--font-roboto);
   background-color: #212426;
+}
+.main-light{
+  font-family: var(--font-roboto);
+  background-color: #e5e5e5;
 }
 
 .app {
@@ -26,7 +33,15 @@ body {
   flex-direction: column;
 }
 
-h1 {
+.switch{
+  position: absolute;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 20%;
+  background-color: #ef9f5e;
+}
+
+.heading-dark {
   font-size: 3rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
@@ -40,7 +55,21 @@ h1 {
   width: fit-content;
 }
 
-.search {
+.heading-light{
+  font-size: 3rem;
+  letter-spacing: 0.9px;
+  background: linear-gradient(
+    90deg,
+    rgb(226, 133, 57) 0%,
+    rgba(163, 100, 48, 0.612) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content
+}
+
+.search-dark{
   width: 71%;
   margin: 4rem 0 2rem;
 
@@ -54,8 +83,22 @@ h1 {
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
+.search-light{
+  width: 71%;
+  margin: 4rem 0 2rem;
 
-.search input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem 1.75rem;
+  border-radius: 3rem;
+  background: #ffffff;
+  -webkit-box-shadow: 5px 5px 7px #b5b5b5, -5px -5px 7px #d2d2d2;
+  box-shadow: 5px 5px 7px #b5b5b5, -5px -5px 7px #d2d2d2;
+}
+
+.search-dark input {
   flex: 1;
   border: none;
   font-size: 1.5rem;
@@ -68,7 +111,20 @@ h1 {
   background: #1f2123;
 }
 
-.search img {
+.search-light input {
+  flex: 1;
+  border: none;
+  font-size: 1.5rem;
+  font-family: var(--font-raleway);
+  font-weight: 500;
+  padding-right: 1rem;
+
+  outline: none;
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+.search-dark img, .search-light img {
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -98,7 +154,7 @@ h1 {
   align-items: center;
 }
 
-.year {
+.year-dark {
   border: 2px solid white;
   width: fit-content;
   padding: 2px 20px;
@@ -106,6 +162,15 @@ h1 {
   background: transparent;
   box-shadow: 3px 5px 2px 0px rgba(255, 255, 255, 0.123),
     5px 5px 2px 0px rgba(255, 255, 255, 0.123) inset;
+}
+.year-light{
+  border: 2px solid rgb(0, 0, 0);
+  width: fit-content;
+  padding: 2px 20px;
+  color: rgb(33, 33, 33) !important;
+  background: transparent;
+  box-shadow: 3px 5px 2px 0px rgba(0, 0, 0, 0.123),
+    5px 5px 2px 0px rgba(0, 0, 0, 0.123) inset;
 }
 
 .empty h2 {
@@ -124,7 +189,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-.movie {
+.movie-dark {
   width: 310px;
   height: 460px;
   margin: 1.5rem;
@@ -138,7 +203,7 @@ h1 {
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
 
-.movie div:nth-of-type(1) {
+.movie-dark div:nth-of-type(1) {
   position: absolute;
   padding: 16px;
   width: 100%;
@@ -147,22 +212,22 @@ h1 {
   color: #f9d3b4;
 }
 
-.movie:hover {
+.movie-dark:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
 }
 
-.movie div:nth-of-type(2) {
+.movie-dark div:nth-of-type(2) {
   width: 100%;
   height: 100%;
 }
 
-.movie div:nth-of-type(2) img {
+.movie-dark div:nth-of-type(2) img {
   height: 100%;
   width: 100%;
 }
 
-.movie div:nth-of-type(3) {
+.movie-dark div:nth-of-type(3) {
   z-index: 2;
   background-color: #343739;
   padding: 16px 24px 24px 24px;
@@ -173,7 +238,7 @@ h1 {
   left: 0;
 }
 
-.movie div:nth-of-type(3) span {
+.movie-dark div:nth-of-type(3) span {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
   font-size: 13px;
@@ -182,22 +247,99 @@ h1 {
   color: #f0f0f0;
 }
 
-.movie div:nth-of-type(3) h3 {
+.movie-dark div:nth-of-type(3) h3 {
   margin-top: 5px;
   font-family: "Roboto Slab", serif;
   color: #f9d3b4;
 }
 
-.movie:hover div:nth-of-type(2) {
+.movie-dark:hover div:nth-of-type(2) {
   height: 100%;
   opacity: 0.3;
 }
 
-.movie:hover div:nth-of-type(3) {
+.movie-dark:hover div:nth-of-type(3) {
   background-color: transparent;
 }
 
-.movie:hover div:nth-of-type(1) {
+.movie-dark:hover div:nth-of-type(1) {
+  opacity: 1;
+}
+
+.movie-light {
+  width: 310px;
+  height: 460px;
+  margin: 1.5rem;
+
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.movie-light div:nth-of-type(1) {
+  position: absolute;
+  padding: 16px;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  color: #f8994b;
+}
+
+.movie-light:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.movie-light div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.movie-light div:nth-of-type(2) img {
+  height: 100%;
+  width: 100%;
+}
+
+.movie-light div:nth-of-type(3) {
+  z-index: 2;
+  background-color: #e4f2ff;
+  padding: 16px 24px 24px 24px;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.movie-light div:nth-of-type(3) span {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.movie-light div:nth-of-type(3) h3 {
+  margin-top: 5px;
+  font-family: "Roboto Slab", serif;
+  color: #c97631;
+}
+
+.movie-light:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.3;
+}
+
+.movie-light:hover div:nth-of-type(3) {
+  background-color: transparent;
+}
+
+.movie-light:hover div:nth-of-type(1) {
   opacity: 1;
 }
 
@@ -206,16 +348,16 @@ h1 {
     padding: 4rem 2rem;
   }
 
-  .search {
+  .search-dark {
     padding: 1rem 1.75rem;
     width: 100%;
   }
 
-  .search input {
+  .search-dark input {
     font-size: 1rem;
   }
 
-  .search img {
+  .search-dark img {
     width: 20px;
     height: 20px;
   }
@@ -234,7 +376,47 @@ h1 {
     margin-top: 2rem;
   }
 
-  .movie {
+  .movie-dark {
+    width: "100%";
+    margin: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .app {
+    padding: 4rem 2rem;
+  }
+
+  .search-light {
+    padding: 1rem 1.75rem;
+    width: 100%;
+  }
+
+  .search-light input {
+    font-size: 1rem;
+  }
+
+  .search-light img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .app {
+    padding: 4rem 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .container {
+    margin-top: 2rem;
+  }
+
+  .movie-light {
     width: "100%";
     margin: 1rem;
   }

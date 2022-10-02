@@ -1,8 +1,9 @@
 import React from "react";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, darkMode }) => {
+
   return (
-    <div className="movie">
+    <div className={darkMode ? "movie-dark" : "movie-light"}>
       <div>
         <p>{movie.Year}</p>
       </div>
@@ -19,7 +20,7 @@ const MovieCard = ({ movie }) => {
       <div>
         <span>{movie.Type}</span>
         <h3>{movie.Title}</h3>
-        <h3 className="year">{movie.Year}</h3>
+        <h3 className={darkMode ? "year-dark" : "year-light"}>{movie.Year}</h3>
       </div>
     </div>
   );
