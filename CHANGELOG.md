@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/kabir0x23/MovieLand/compare/v0.2.1...v0.2.2) (2022-10-14)
+
+
+### Bug Fixes
+
+* data year and improve design ([#36](https://github.com/kabir0x23/MovieLand/issues/36)) ([142af55](https://github.com/kabir0x23/MovieLand/commit/142af55b13463e4bc4738dac6665b2e29b42bc93))
+
+
+
 ## [0.2.1](https://github.com/kabir0x23/MovieLand/compare/v0.2.0...v0.2.1) (2022-10-02)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * Icon title ([#23](https://github.com/kabir0x23/MovieLand/issues/23)) ([37bcdcf](https://github.com/kabir0x23/MovieLand/commit/37bcdcf27413d49747c151e01f5e090a9f60527f))
-
-
-
-## [0.1.1](https://github.com/kabir0x23/MovieLand/compare/7d2d786ae0538192da247d9b75caded1bf4c4aed...v0.1.1) (2022-07-21)
-
-
-### Bug Fixes
-
-* releases ([#22](https://github.com/kabir0x23/MovieLand/issues/22)) ([7d2d786](https://github.com/kabir0x23/MovieLand/commit/7d2d786ae0538192da247d9b75caded1bf4c4aed))
 
 
 
