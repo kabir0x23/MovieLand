@@ -1,3 +1,12 @@
+## [0.2.3](https://github.com/kabir0x23/MovieLand/compare/v0.2.2...v0.2.3) (2022-10-20)
+
+
+### Bug Fixes
+
+* updated cursor in DarkMode Btn ([#43](https://github.com/kabir0x23/MovieLand/issues/43)) ([b2a896e](https://github.com/kabir0x23/MovieLand/commit/b2a896e4b8268415123eb072a0c8c4856c88128e))
+
+
+
 ## [0.2.2](https://github.com/kabir0x23/MovieLand/compare/v0.2.1...v0.2.2) (2022-10-14)
 
 
@@ -31,15 +40,6 @@
 ### Reverts
 
 * Revert "added dark and light theme mode successfully (#26)" (#27) ([af0a11c](https://github.com/kabir0x23/MovieLand/commit/af0a11cf614a32f05737f32a7258ad7ba2f47f39)), closes [#26](https://github.com/kabir0x23/MovieLand/issues/26) [#27](https://github.com/kabir0x23/MovieLand/issues/27)
-
-
-
-## [0.1.2](https://github.com/kabir0x23/MovieLand/compare/v0.1.1...v0.1.2) (2022-07-21)
-
-
-### Bug Fixes
-
-* Icon title ([#23](https://github.com/kabir0x23/MovieLand/issues/23)) ([37bcdcf](https://github.com/kabir0x23/MovieLand/commit/37bcdcf27413d49747c151e01f5e090a9f60527f))
 
 
 
