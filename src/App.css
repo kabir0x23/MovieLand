@@ -40,6 +40,7 @@
     padding: 10px;
     border-radius: 20%;
     background-color: #ef9f5e;
+    cursor: pointer;
 }
 
 .heading-dark {
