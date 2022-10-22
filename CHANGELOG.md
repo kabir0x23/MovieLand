@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/kabir0x23/MovieLand/compare/v0.2.3...v0.3.0) (2022-10-22)
+
+
+### Features
+
+* Added footer with copyright line and social icons with hover Effects[Fixes [#41](https://github.com/kabir0x23/MovieLand/issues/41)] ([#44](https://github.com/kabir0x23/MovieLand/issues/44)) ([e1b6768](https://github.com/kabir0x23/MovieLand/commit/e1b6768ea4611aa3019ac68a19d1757d6e068048))
+
+
+
 ## [0.2.3](https://github.com/kabir0x23/MovieLand/compare/v0.2.2...v0.2.3) (2022-10-20)
 
 
@@ -31,15 +40,6 @@
 ### Features
 
 * release date below movie name in card ([#29](https://github.com/kabir0x23/MovieLand/issues/29)) ([f10b605](https://github.com/kabir0x23/MovieLand/commit/f10b6057880c757ef6e599c79a28b17b97319b4c))
-
-
-
-## [0.1.3](https://github.com/kabir0x23/MovieLand/compare/v0.1.2...v0.1.3) (2022-09-30)
-
-
-### Reverts
-
-* Revert "added dark and light theme mode successfully (#26)" (#27) ([af0a11c](https://github.com/kabir0x23/MovieLand/commit/af0a11cf614a32f05737f32a7258ad7ba2f47f39)), closes [#26](https://github.com/kabir0x23/MovieLand/issues/26) [#27](https://github.com/kabir0x23/MovieLand/issues/27)
 
 
 
