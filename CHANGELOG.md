@@ -1,3 +1,12 @@
+# [0.4.0](https://github.com/kabir0x23/MovieLand/compare/v0.3.0...v0.4.0) (2022-10-24)
+
+
+### Features
+
+* scroll to top Button [Fixes [#42](https://github.com/kabir0x23/MovieLand/issues/42)] ([#45](https://github.com/kabir0x23/MovieLand/issues/45)) ([439304a](https://github.com/kabir0x23/MovieLand/commit/439304ae91c9123415adbe205ebcf2bf70de681d))
+
+
+
 # [0.3.0](https://github.com/kabir0x23/MovieLand/compare/v0.2.3...v0.3.0) (2022-10-22)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * console warnings ([#32](https://github.com/kabir0x23/MovieLand/issues/32)) ([8965f29](https://github.com/kabir0x23/MovieLand/commit/8965f29b9bf446e8e998edfedeb4207ccd673a04))
-
-
-
-# [0.2.0](https://github.com/kabir0x23/MovieLand/compare/v0.1.3...v0.2.0) (2022-10-01)
-
-
-### Features
-
-* release date below movie name in card ([#29](https://github.com/kabir0x23/MovieLand/issues/29)) ([f10b605](https://github.com/kabir0x23/MovieLand/commit/f10b6057880c757ef6e599c79a28b17b97319b4c))
 
 
 
