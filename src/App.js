@@ -28,6 +28,12 @@ const App = () => {
         console.log(data.Search);
         setMovies(data.Search);
     };
+    
+    const handleKeyPress=(event)=>{
+    	if(event.key==="Enter"){
+    		searchMovies(searchTerm);
+    	}
+    };
 
     return (
         <div className={darkMode ? 'main-dark' : "main-light"}> 
@@ -49,7 +55,8 @@ const App = () => {
                     <input
                         placeholder="Search for movies"
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) => setSearchTerm(e.target.value)} 
+                        onKeyDown={handleKeyPress}
                     />
 
                     <img
